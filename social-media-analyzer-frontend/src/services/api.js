@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_BASE_URL = "shttps://social-media-content-analyzer-q1kg.onrender.com"; // Spring Boot backend URL
+// Use Vite env variable
+const API_BASE_URL = "https://social-media-content-analyzer-q1kg.onrender.com";
+
 
 export const uploadFile = async (file) => {
   const formData = new FormData();

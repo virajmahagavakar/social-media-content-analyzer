@@ -12,12 +12,13 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Apply to all endpoints
+                registry.addMapping("/**")
                         .allowedOrigins(
-                            "http://localhost:5173", // Local dev
-                            "https://virajsocialmediaanalyzer.netlify.app" // Netlify frontend
+                            "http://localhost:5173",
+                            "https://virajsocialmediaanalyzer.netlify.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*") // allow all headers
                         .allowCredentials(true);
             }
         };

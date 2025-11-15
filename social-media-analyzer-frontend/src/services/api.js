@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Use Vite env variable
-const API_BASE_URL = "https://social-media-content-analyzer-q1kg.onrender.com";
+const API_BASE_URL = "https://social-media-content-analyzer-q1kg.onrender.com/api/upload";
 
 
 export const uploadFile = async (file) => {

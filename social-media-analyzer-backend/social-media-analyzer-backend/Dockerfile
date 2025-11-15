@@ -32,4 +32,5 @@ ENV TESSDATA_PREFIX=/app/tessdata
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Xmx1g", "-jar", "app.jar"]
+

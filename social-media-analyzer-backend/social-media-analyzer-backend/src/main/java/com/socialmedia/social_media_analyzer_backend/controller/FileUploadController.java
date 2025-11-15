@@ -13,7 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://virajsocialmediaanalyzer.netlify.app")
 public class FileUploadController {
 
     private final FileService fileService;
@@ -33,33 +32,19 @@ public class FileUploadController {
                 ));
             }
 
-            // ✅ Analyze file
             AnalysisResult analysisResult = fileService.analyzeFile(file);
 
-            // Return full result for frontend (pie chart works now)
             return ResponseEntity.ok(Map.of(
                     "status", analysisResult.getStatus(),
                     "message", analysisResult.getMessage(),
                     "data", analysisResult
             ));
 
-        } catch (TesseractException e) {
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().body(Map.of(
-                    "status", "error",
-                    "message", "OCR processing failed: " + e.getMessage()
-            ));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().body(Map.of(
-                    "status", "error",
-                    "message", "File read error: " + e.getMessage()
-            ));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.internalServerError().body(Map.of(
                     "status", "error",
-                    "message", "Unexpected error: " + e.getMessage()
+                    "message", e.getMessage()
             ));
         }
     }

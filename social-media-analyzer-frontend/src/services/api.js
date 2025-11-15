@@ -1,15 +1,14 @@
 import axios from "axios";
 
-// Use Vite env variable
+// Correct URL
 const API_BASE_URL = "https://social-media-content-analyzer-q1kg.onrender.com/api/upload";
-
 
 export const uploadFile = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
 
   try {
-    const response = await axios.post(`${API_BASE_URL}/upload`, formData, {
+    const response = await axios.post(API_BASE_URL, formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
     return response.data;

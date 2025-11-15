@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/api"; // Spring Boot backend URL
+const API_BASE_URL = "shttps://social-media-content-analyzer-q1kg.onrender.com"; // Spring Boot backend URL
 
 export const uploadFile = async (file) => {
   const formData = new FormData();

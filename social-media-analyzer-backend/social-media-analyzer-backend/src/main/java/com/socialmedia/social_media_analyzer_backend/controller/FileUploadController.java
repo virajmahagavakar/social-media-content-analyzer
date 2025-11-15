@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://virajsocialmediaanalyzer.netlify.app")
 public class FileUploadController {
 
     private final FileService fileService;
